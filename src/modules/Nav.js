@@ -6,7 +6,9 @@ class MainNavigation extends React.Component {
     
     constructor(props) {
         super(props)
+        
         this.state = {
+            siteUrl:props.siteUrl,
             pages:[]
         }
     }
@@ -16,13 +18,8 @@ class MainNavigation extends React.Component {
             .then((response) => response.json())
             .then((responseJson) => {
                 // Update state here
-                console.log("menu")
                 const pageLinks = Object.values(responseJson)
                 this.setState({pages : pageLinks})
-                // const childItems = responseJson.filter(el => el.menu_item_parent != 0 )
-                // console.log(childItems)
-                // const parentItems = responseJson.filter(el => childItems.some(element => element.menu_item_parent == el.ID))
-                // console.log(parentItems)
             })
             .catch((error) => {
                 console.error(error);
@@ -30,8 +27,7 @@ class MainNavigation extends React.Component {
     }
 
     getLinkFromUrl(url) {
-        const urlArray = url.split('/').reverse()
-        const link = urlArray[1] != "" ? urlArray[1] : urlArray[0]
+        const link = url.split(this.props.siteUrl)[1] ? url.split(this.props.siteUrl)[1].slice(0,-1) : url
         return link
     }
 
@@ -53,8 +49,8 @@ class MainNavigation extends React.Component {
                         {this.state.pages.map(pageLink => {
                             const pageTitle = pageLink.title
                             const pageUrl = this.getLinkFromUrl(pageLink.url)
+                            console.log(pageUrl)
                             const childElements = pageLink.wpse_children ? Object.values(pageLink.wpse_children) : null
-                            console.log(childElements)
                             if(childElements) {
                                 return (
                                     <NavDropdown key={pageLink.ID} title={pageLink.title} id="context-nav-dropdown">

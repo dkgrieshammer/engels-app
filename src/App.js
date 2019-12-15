@@ -7,7 +7,7 @@ class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.siteURL = 'http://engels-site'
+    this.siteUrl = 'http://engels-site'
     this.state = {
       title: {},
       date: "",
@@ -33,15 +33,16 @@ class App extends React.Component {
   }
 
   getLinkFromUrl(url) {
-    const link = url.split(this.siteURL)[1]
-    return link.slice(0,-1)
+    // const link = url.split(this.siteURL)[1]
+    const link = url.split(this.siteUrl)[1] ? url.split(this.siteUrl)[1].slice(0,-1) : url
+    return link
 }
 
   render() {
     return (
       <Router onChange={this.testFunc}>
         <div className="App">
-          <MainNavigation pages={this.state.pages} />
+          <MainNavigation pages={this.state.pages} siteUrl={this.siteUrl} />
           {/* Content will get some love later :) */}
           <Switch>
 
@@ -57,7 +58,7 @@ class App extends React.Component {
               // const parent = page.parent;
               // path={`${parent ? '/'+parent :''}/${page.slug}`}
               // path={`/${page.slug}`}
-              console.log(pageUrl)
+              // console.log(pageUrl)
               return (
                 // <Route key={pageID} path={`${parent ? '/'+parent :''}/${page.slug}`}>
                 <Route key={pageID} path={pageUrl}>
