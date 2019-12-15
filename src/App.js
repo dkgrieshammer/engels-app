@@ -7,6 +7,7 @@ class App extends React.Component {
 
   constructor(props) {
     super(props)
+    this.siteURL = 'http://engels-site'
     this.state = {
       title: {},
       date: "",
@@ -21,7 +22,7 @@ class App extends React.Component {
       .then((responseJson) => {
         // Update state here
         const pages = responseJson
-        // console.log(responseJson)
+        console.log(responseJson)
         this.setState({ pages: pages })
         // const { title, date, content } =  responseJson[0];
         // this.setState({ title, date, content })
@@ -30,6 +31,11 @@ class App extends React.Component {
         console.error(error);
       });
   }
+
+  getLinkFromUrl(url) {
+    const link = url.split(this.siteURL)[1]
+    return link.slice(0,-1)
+}
 
   render() {
     return (
@@ -47,12 +53,14 @@ class App extends React.Component {
             </Route>
             {this.state.pages.map((page, i) => {
               const pageID = page.id
-              const parent = page.parent;
+              const pageUrl = this.getLinkFromUrl(page.link)
+              // const parent = page.parent;
               // path={`${parent ? '/'+parent :''}/${page.slug}`}
               // path={`/${page.slug}`}
-              console.log(parent)
+              console.log(pageUrl)
               return (
-                <Route key={pageID} path={`${parent ? '/'+parent :''}/${page.slug}`}>
+                // <Route key={pageID} path={`${parent ? '/'+parent :''}/${page.slug}`}>
+                <Route key={pageID} path={pageUrl}>
                   <div>{page.slug}</div>
                   <div dangerouslySetInnerHTML={{ __html: page.content.rendered }}></div>
                 </Route>

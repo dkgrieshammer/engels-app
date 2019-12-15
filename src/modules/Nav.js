@@ -29,6 +29,12 @@ class MainNavigation extends React.Component {
             });
     }
 
+    getLinkFromUrl(url) {
+        const urlArray = url.split('/').reverse()
+        const link = urlArray[1] != "" ? urlArray[1] : urlArray[0]
+        return link
+    }
+
     render() {
         return (
             <Navbar bg="light" expand="lg">
@@ -45,30 +51,21 @@ class MainNavigation extends React.Component {
                             <NavDropdown.Item as={Link} to="/organizations">Organisationen</NavDropdown.Item>
                         </NavDropdown>
                         {this.state.pages.map(pageLink => {
-                            // pageLink.
+                            const pageTitle = pageLink.title
+                            const pageUrl = this.getLinkFromUrl(pageLink.url)
                             const childElements = pageLink.wpse_children ? Object.values(pageLink.wpse_children) : null
-                            console.log(pageLink)
+                            console.log(childElements)
                             if(childElements) {
                                 return (
                                     <NavDropdown key={pageLink.ID} title={pageLink.title} id="context-nav-dropdown">
-                                        {childElements.map(el => (<NavDropdown.Item key={el.ID} as={Link} to="/family">{el.title}</NavDropdown.Item>))}
+                                        {childElements.map(el => (<NavDropdown.Item key={el.ID} as={Link} to={this.getLinkFromUrl(el.url)}>{el.title}</NavDropdown.Item>))}
                                     </NavDropdown>
                                 )
                             } else {
-                            return <Nav.Link key={pageLink.ID} as={Link} to="/correspondence">{pageLink.title}</Nav.Link>
+                            return <Nav.Link key={pageLink.ID} as={Link} to={pageUrl}>{pageTitle}</Nav.Link>
                             }
                         }
                         )}
-                        {/* <NavDropdown title="Historischer Kontext" id="context-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="/family">Familie Engels</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/story">&Uuml;berlieferungsgeschichte</NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown title="&Uuml;ber die Edition" id="about-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="/project">Projekt</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/introduction">Einf&uuml;hrung</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/report">Editorischer Bericht</NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link as={Link} to="/contact">Kontakt</Nav.Link> */}
                     </Nav>
                     {/* <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
