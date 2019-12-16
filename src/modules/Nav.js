@@ -8,7 +8,6 @@ class MainNavigation extends React.Component {
         super(props)
         
         this.state = {
-            siteUrl:props.siteUrl,
             pages:[]
         }
     }
@@ -24,11 +23,6 @@ class MainNavigation extends React.Component {
             .catch((error) => {
                 console.error(error);
             });
-    }
-
-    getLinkFromUrl(url) {
-        const link = url.split(this.props.siteUrl)[1] ? url.split(this.props.siteUrl)[1].slice(0,-1) : url
-        return link
     }
 
     render() {
@@ -48,13 +42,13 @@ class MainNavigation extends React.Component {
                         </NavDropdown>
                         {this.state.pages.map(pageLink => {
                             const pageTitle = pageLink.title
-                            const pageUrl = this.getLinkFromUrl(pageLink.url)
+                            const pageUrl = this.props.callback(pageLink.url)
                             console.log(pageUrl)
                             const childElements = pageLink.wpse_children ? Object.values(pageLink.wpse_children) : null
                             if(childElements) {
                                 return (
                                     <NavDropdown key={pageLink.ID} title={pageLink.title} id="context-nav-dropdown">
-                                        {childElements.map(el => (<NavDropdown.Item key={el.ID} as={Link} to={this.getLinkFromUrl(el.url)}>{el.title}</NavDropdown.Item>))}
+                                        {childElements.map(el => (<NavDropdown.Item key={el.ID} as={Link} to={this.props.callback(el.url)}>{el.title}</NavDropdown.Item>))}
                                     </NavDropdown>
                                 )
                             } else {
