@@ -1,28 +1,103 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { DataContext } from "./modules/Contexts"
 import MainNavigation from './modules/Nav'
 import Home from './modules/Home'
+import Letters from './pages/Letters'
+import WpPage from './pages/WpPage'
+import Correspondences from './pages/Correspondences';
+import Footer from './modules/Footer';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.siteUrl = 'http://engels-site'
+    this.siteUrl = 'http://wordpress.engels-archiv.de'
     this.state = {
       title: {},
       date: "",
       content: {},
-      pages: []
+      pages: [],
+      letters: [],
+      places: [],
+      persons: []
     }
+    this.getWpPages()
+    // this.getAllLetters()
+    // this.getAllPersons()
+    // this.getAllPlaces()
+    this.getData()
   }
 
   componentDidMount() {
-    return fetch('http://engels-site/wp-json/wp/v2/pages/')
+
+  }
+
+  getData() {
+    const getPersons = fetch('http://api.engels-archiv.de/api/v1/persons').then((response) => response.json())
+    const getPlaces = fetch('http://api.engels-archiv.de/api/v1/places').then((response) => response.json())
+    const getLetters = fetch('http://api.engels-archiv.de/api/v1/letters').then((response) => response.json())
+    Promise.all([getPersons, getPlaces, getLetters])
+      .then((responses) => {
+        console.log(responses)
+        const persons = responses[0]
+        const places = responses[1]
+        const letters = responses[2]
+        this.setState({ 
+          persons: persons.data.person,
+          places: places.data.place,
+          letters: letters.data.letter
+        })
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+  }
+
+  getAllPersons() {
+    return fetch('http://api.engels-archiv.de/api/v1/persons')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        // Update state here
+        const persons = responseJson
+        this.setState({ persons: persons.data.person })
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+  getAllPlaces() {
+    return fetch('http://api.engels-archiv.de/api/v1/places')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        // Update state here
+        const places = responseJson
+        this.setState({ places: places.data.place })
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  getAllLetters() {
+    return fetch('http://api.engels-archiv.de/api/v1/letters')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        // Update state here
+        const letters = responseJson
+        this.setState({ letters: letters.data.letter })
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  getWpPages() {
+    return fetch('http://wordpress.engels-archiv.de/wp-json/wp/v2/pages/')
       .then((response) => response.json())
       .then((responseJson) => {
         // Update state here
         const pages = responseJson
-        console.log(responseJson)
         this.setState({ pages: pages })
       })
       .catch((error) => {
@@ -31,45 +106,44 @@ class App extends React.Component {
   }
 
   getLinkFromUrl(url) {
-    const link = url.split(this.siteUrl)[1] ? url.split(this.siteUrl)[1].slice(0,-1) : url
+    const link = url.split(this.siteUrl)[1] ? url.split(this.siteUrl)[1].slice(0, -1) : url
     return link
-}
+  }
 
   render() {
     return (
-      <Router onChange={this.testFunc}>
-        <div className="App">
-          <MainNavigation pages={this.state.pages} siteUrl={this.siteUrl} callback={this.getLinkFromUrl} />
-          <Switch>
-            <Route path="/home">
-              <Home />
-            </Route>
-            <Route path="/letters">
-              <Letters />
-            </Route>
-            {this.state.pages.map((page, i) => {
-              const pageID = page.id
-              const pageUrl = this.getLinkFromUrl(page.link)
-              return (
-                <Route key={pageID} path={pageUrl}>
-                  <div>{page.slug}</div>
-                  <div dangerouslySetInnerHTML={{ __html: page.content.rendered }}></div>
-                </Route>
-              )
-            }
-            )}
-          </Switch>
-        </div>
-      </Router>
+      <Router>
+        <DataContext.Provider value={this.state}>
+          <div className="App">
+            <MainNavigation pages={this.state.pages} siteUrl={this.siteUrl} callback={this.getLinkFromUrl} />
+            <Switch>
+              <Route path="/home">
+                <Home />
+              </Route>
+              <Route path="/correspondences">
+                <Correspondences persons={this.state.persons}/>
+              </Route>
+              <Route path="/letters">
+                <Letters letters={this.state.letters} />
+              </Route>
+              {this.state.pages.map((page, i) => {
+                const pageID = page.id
+                const pageUrl = this.getLinkFromUrl(page.link)
+                return (
+                  <Route key={pageID} path={pageUrl}>
+                    <WpPage page={page} />
+                  </Route>
+                )
+              }
+              )}
+            </Switch>
+          </div>
+        <Footer />
+        </DataContext.Provider>
+        </Router>
     )
   }
 
-}
-
-function Letters() {
-  return (
-    <h2>Letters</h2>
-  );
 }
 
 export default App;

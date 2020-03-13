@@ -11,7 +11,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <Container> 
+            <Container className="main-container"> 
                 <Row>
                     <Col>
                     <Slideshow />
