@@ -1,0 +1,5 @@
+ExpansionHeader example:
+
+```js
+<ExpansionHeader />
+```

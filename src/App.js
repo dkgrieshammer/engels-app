@@ -13,6 +13,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.siteUrl = 'http://wordpress.engels-archiv.de'
+    this.counter = 0
     this.state = {
       title: {},
       date: "",
@@ -28,77 +29,83 @@ class App extends React.Component {
     // this.getAllPlaces()
     this.getData()
   }
-
+  
   componentDidMount() {
 
   }
 
   getData() {
+    console.log("Called by " + this.counter)
     const getPersons = fetch('http://api.engels-archiv.de/api/v1/persons').then((response) => response.json())
     const getPlaces = fetch('http://api.engels-archiv.de/api/v1/places').then((response) => response.json())
     const getLetters = fetch('http://api.engels-archiv.de/api/v1/letters').then((response) => response.json())
     Promise.all([getPersons, getPlaces, getLetters])
-      .then((responses) => {
-        console.log(responses)
-        const persons = responses[0]
-        const places = responses[1]
-        const letters = responses[2]
-        this.setState({ 
-          persons: persons.data.person,
-          places: places.data.place,
-          letters: letters.data.letter
-        })
+    .then((responses) => {
+      console.log(responses)
+      const persons = responses[0]
+      const places = responses[1]
+      const letters = responses[2]
+      this.setState({ 
+        persons: persons.data.person,
+        places: places.data.place,
+        letters: letters.data.letter
+      })
+      this.counter ++
+      console.log("Called by " + this.counter)
       })
       .catch((error) => {
         console.error(error);
       })
   }
 
-  getAllPersons() {
-    return fetch('http://api.engels-archiv.de/api/v1/persons')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        // Update state here
-        const persons = responseJson
-        this.setState({ persons: persons.data.person })
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-  getAllPlaces() {
-    return fetch('http://api.engels-archiv.de/api/v1/places')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        // Update state here
-        const places = responseJson
-        this.setState({ places: places.data.place })
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+  // getAllPersons() {
+  //   return fetch('http://api.engels-archiv.de/api/v1/persons')
+  //     .then((response) => response.json())
+  //     .then((responseJson) => {
+  //       // Update state here
+  //       const persons = responseJson
+  //       this.setState({ persons: persons.data.person })
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }
+  // getAllPlaces() {
+  //   return fetch('http://api.engels-archiv.de/api/v1/places')
+  //     .then((response) => response.json())
+  //     .then((responseJson) => {
+  //       // Update state here
+  //       const places = responseJson
+  //       this.setState({ places: places.data.place })
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }
 
-  getAllLetters() {
-    return fetch('http://api.engels-archiv.de/api/v1/letters')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        // Update state here
-        const letters = responseJson
-        this.setState({ letters: letters.data.letter })
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+  // getAllLetters() {
+  //   return fetch('http://api.engels-archiv.de/api/v1/letters')
+  //     .then((response) => response.json())
+  //     .then((responseJson) => {
+  //       // Update state here
+  //       const letters = responseJson
+  //       this.setState({ letters: letters.data.letter })
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }
 
   getWpPages() {
+    console.log("Called by " + this.counter)
     return fetch('http://wordpress.engels-archiv.de/wp-json/wp/v2/pages/')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        // Update state here
-        const pages = responseJson
-        this.setState({ pages: pages })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      // Update state here
+      const pages = responseJson
+      this.setState({ pages: pages })
+        this.counter ++
+        console.log("Called by " + this.counter)
       })
       .catch((error) => {
         console.error(error);

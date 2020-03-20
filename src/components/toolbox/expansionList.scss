@@ -1,0 +1,55 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import './../../lightTheme.scss';
+@import './toolbox.scss';
+
+.expansion-header{
+  height: 45px;
+  border-top: 1px solid $gray1;
+  position: relative;
+  padding: 0 10px;
+  span {
+    line-height: 45px;
+  }
+  .lt-icon {
+    position: absolute;
+    right: 7px;
+    bottom: 2px;
+  }
+  &:hover{
+    background-color: #efefef;
+  }
+  &:active{
+    background-color: #dfdfdf;
+  }
+}
+
+.check-list-item {
+  padding: 0 10px;
+  line-height: 38px;
+  position: relative;
+  .lt-icon {
+    position: relative;
+    margin-right: 4px;
+    bottom: 2px;
+  }
+  .lt-list-counter {
+    position: absolute;
+    right: 8px;
+  }
+}
+
+
+.lt-search-input {
+  position: relative;
+  padding: 0 10px;
+  .lt-icon {
+    position: absolute;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+  }
+  input {
+    padding-left: 2.375rem;
+  }
+}
