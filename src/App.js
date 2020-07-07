@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { DataContext } from "./modules/Contexts"
-import MainNavigation from './modules/Nav'
+import MainNavigation from './components/nav/Header'
 import Home from './modules/Home'
 import Letters from './pages/Letters'
 import WpPage from './pages/WpPage'
@@ -38,7 +38,7 @@ class App extends React.Component {
     console.log("Called by " + this.counter)
     const getPersons = fetch('http://api.engels-archiv.de/api/v1/persons').then((response) => response.json())
     const getPlaces = fetch('http://api.engels-archiv.de/api/v1/places').then((response) => response.json())
-    const getLetters = fetch('http://api.engels-archiv.de/api/v1/letters').then((response) => response.json())
+    const getLetters = fetch('https://chost20.zim.uni-wuppertal.de/api/v1/letters').then((response) => response.json())
     Promise.all([getPersons, getPlaces, getLetters])
     .then((responses) => {
       console.log(responses)

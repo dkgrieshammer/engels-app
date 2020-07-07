@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "./../modules/Contexts";
-import Table, { ThCell } from './../components/Table'
+import Table, { ThCell } from './../components/table/Table'
 import Toolbox from "../components/toolbox/toolbox";
 
 export default function Letters(props) {
