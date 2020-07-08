@@ -1,56 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
-
-
-const Navbar = styled.div`
-    height: 6rem;
-`
-
-const Title = styled.h1`
-    font-weight: 500;
-    font-size: 2,6rem;
-    line-height: 3rem;
-`
-
-
-export function Header() {
-
-    return (
-        <div>
-            <Title>Industriegeschichte Privat</Title>
-        </div>
-    )
-}
+import { Navbar } from './../../styles';
 
 class MainNavigation extends React.Component {
-
+    
     constructor(props) {
         super(props)
-
+        
         this.state = {
-            pages: []
+            pages:[]
         }
     }
-
-    // componentDidMount() {
-    //     return fetch('http://wordpress.engels-archiv.de/wp-json/wp/v2/menu')
-    //         .then((response) => response.json())
-    //         .then((responseJson) => {
-    //             // Update state here
-    //             // const pageLinks = Object.values(responseJson)
-    //             const pageLinks = Object.values(responseJson)
-    //             const sortedLinks = pageLinks.sort((a, b) => {
-    //                 if(a.menu_order > b.menu_order) return 1
-    //                 if(a.menu_order < b.menu_order) return -1
-    //                 return 0
-    //             })
-    //             this.setState({pages : sortedLinks})
-    //         })
-    //         .catch((error) => {
-    //             console.error(error);
-    //         });
-    // }
+    
+    componentDidMount() {
+        return fetch('http://wordpress.engels-archiv.de/wp-json/wp/v2/menu')
+            .then((response) => response.json())
+            .then((responseJson) => {
+                // Update state here
+                // const pageLinks = Object.values(responseJson)
+                const pageLinks = Object.values(responseJson)
+                const sortedLinks = pageLinks.sort((a, b) => {
+                    if(a.menu_order > b.menu_order) return 1
+                    if(a.menu_order < b.menu_order) return -1
+                    return 0
+                })
+                this.setState({pages : sortedLinks})
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
 
     render() {
         return (
