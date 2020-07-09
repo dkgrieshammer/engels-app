@@ -1,0 +1,459 @@
+{
+  "config": {
+    "title": "Engels App",
+    "description": "My awesome app using docz",
+    "menu": [],
+    "version": "0.1.0",
+    "repository": null,
+    "native": false,
+    "themeConfig": {},
+    "separator": "-"
+  },
+  "entries": [
+    {
+      "key": "README.md",
+      "value": {
+        "id": "04c6e90faac2675aa89e2176d2eec7d8",
+        "filepath": "README.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/README.md",
+        "link": "",
+        "hidden": false,
+        "slug": "readme",
+        "route": "/readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "available-scripts",
+            "depth": 2,
+            "value": "Available Scripts"
+          },
+          {
+            "slug": "npm-start",
+            "depth": 3,
+            "value": "npm start"
+          },
+          {
+            "slug": "npm-test",
+            "depth": 3,
+            "value": "npm test"
+          },
+          {
+            "slug": "npm-run-build",
+            "depth": 3,
+            "value": "npm run build"
+          },
+          {
+            "slug": "npm-run-eject",
+            "depth": 3,
+            "value": "npm run eject"
+          },
+          {
+            "slug": "learn-more",
+            "depth": 2,
+            "value": "Learn More"
+          },
+          {
+            "slug": "code-splitting",
+            "depth": 3,
+            "value": "Code Splitting"
+          },
+          {
+            "slug": "analyzing-the-bundle-size",
+            "depth": 3,
+            "value": "Analyzing the Bundle Size"
+          },
+          {
+            "slug": "making-a-progressive-web-app",
+            "depth": 3,
+            "value": "Making a Progressive Web App"
+          },
+          {
+            "slug": "advanced-configuration",
+            "depth": 3,
+            "value": "Advanced Configuration"
+          },
+          {
+            "slug": "deployment",
+            "depth": 3,
+            "value": "Deployment"
+          },
+          {
+            "slug": "npm-run-build-fails-to-minify",
+            "depth": 3,
+            "value": "npm run build  fails to minify"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/docs/introduction.mdx",
+      "value": {
+        "name": "Header",
+        "id": "d92eba003f4e20fa01de1111543b55e1",
+        "filepath": "src/docs/introduction.mdx",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/docs/introduction.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "src-docs-introduction",
+        "route": "/src-docs-introduction",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "page-header",
+            "depth": 1,
+            "value": "Page Header"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/cell/row.md",
+      "value": {
+        "id": "bcec0f079ed0f3ea859b2b17d9ede2a1",
+        "filepath": "src/components/cell/row.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/components/cell/row.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-cell-row",
+        "route": "/src-components-cell-row",
+        "name": "Row",
+        "menu": "",
+        "headings": []
+      }
+    },
+    {
+      "key": "src/components/closeButton/CloseButton.md",
+      "value": {
+        "id": "22daf70b743b25fdd8de8746e83cb3aa",
+        "filepath": "src/components/closeButton/CloseButton.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/components/closeButton/CloseButton.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-close-button-close-button",
+        "route": "/src-components-close-button-close-button",
+        "name": "Close button",
+        "menu": "",
+        "headings": []
+      }
+    },
+    {
+      "key": "src/components/header/Header.md",
+      "value": {
+        "id": "b2e1663c6e536f19dc38927d58971796",
+        "filepath": "src/components/header/Header.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/components/header/Header.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-header-header",
+        "route": "/src-components-header-header",
+        "name": "Header",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "header",
+            "depth": 4,
+            "value": "Header"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/letter/letter.md",
+      "value": {
+        "id": "cc2c4c17b70f3951bc546aa37126c1f4",
+        "filepath": "src/components/letter/letter.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/components/letter/letter.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-letter-letter",
+        "route": "/src-components-letter-letter",
+        "name": "Letter",
+        "menu": "",
+        "headings": []
+      }
+    },
+    {
+      "key": "src/components/omnibox/Omnibox.md",
+      "value": {
+        "id": "3c723d38c1d04f4aa743828858912868",
+        "filepath": "src/components/omnibox/Omnibox.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/components/omnibox/Omnibox.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-omnibox-omnibox",
+        "route": "/src-components-omnibox-omnibox",
+        "name": "Omnibox",
+        "menu": "",
+        "headings": []
+      }
+    },
+    {
+      "key": "src/components/table/Table.md",
+      "value": {
+        "id": "a6811e20971db7c5caa142791d4d324e",
+        "filepath": "src/components/table/Table.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/components/table/Table.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-table-table",
+        "route": "/src-components-table-table",
+        "name": "Table",
+        "menu": "",
+        "headings": []
+      }
+    },
+    {
+      "key": "src/components/toolbox/Toolbox.md",
+      "value": {
+        "id": "8bdd6057b63fc213dc7f4bd898e30650",
+        "filepath": "src/components/toolbox/Toolbox.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/components/toolbox/Toolbox.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-toolbox-toolbox",
+        "route": "/src-components-toolbox-toolbox",
+        "name": "Toolbox",
+        "menu": "",
+        "headings": []
+      }
+    },
+    {
+      "key": "src/components/toolbox/expansionHeader.md",
+      "value": {
+        "id": "a77f410f7de97b3bde945bbd8d0afcc5",
+        "filepath": "src/components/toolbox/expansionHeader.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/components/toolbox/expansionHeader.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-toolbox-expansion-header",
+        "route": "/src-components-toolbox-expansion-header",
+        "name": "Expansion header",
+        "menu": "",
+        "headings": []
+      }
+    },
+    {
+      "key": "src/components/toolbox/expansionList.md",
+      "value": {
+        "id": "adcfc611309cd94420dbc575ced2c929",
+        "filepath": "src/components/toolbox/expansionList.md",
+        "fullpath": "/Users/david/Documents/dev/Engelsjahr/engels-app/src/components/toolbox/expansionList.md",
+        "link": "",
+        "hidden": false,
+        "slug": "src-components-toolbox-expansion-list",
+        "route": "/src-components-toolbox-expansion-list",
+        "name": "Expansion list",
+        "menu": "",
+        "headings": []
+      }
+    }
+  ],
+  "props": [
+    {
+      "key": "src/App.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "App",
+          "methods": [
+            {
+              "name": "getData",
+              "docblock": null,
+              "modifiers": [],
+              "params": [],
+              "returns": null
+            },
+            {
+              "name": "getWpPages",
+              "docblock": null,
+              "modifiers": [],
+              "params": [],
+              "returns": null
+            },
+            {
+              "name": "getLinkFromUrl",
+              "docblock": null,
+              "modifiers": [],
+              "params": [
+                {
+                  "name": "url",
+                  "optional": false,
+                  "type": null
+                }
+              ],
+              "returns": null
+            }
+          ],
+          "actualName": "App"
+        }
+      ]
+    },
+    {
+      "key": "src/Icons.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "ArrowDown",
+          "methods": [],
+          "actualName": "ArrowDown"
+        },
+        {
+          "description": "",
+          "displayName": "ArrowUp",
+          "methods": [],
+          "actualName": "ArrowUp"
+        },
+        {
+          "description": "",
+          "displayName": "CarotUp",
+          "methods": [],
+          "actualName": "CarotUp"
+        }
+      ]
+    },
+    {
+      "key": "src/modules/Footer.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Footer",
+          "methods": [],
+          "actualName": "Footer"
+        }
+      ]
+    },
+    {
+      "key": "src/modules/Home.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Home",
+          "methods": [],
+          "actualName": "Home"
+        }
+      ]
+    },
+    {
+      "key": "src/pages/Correspondences.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Correspondences",
+          "methods": [],
+          "actualName": "Correspondences"
+        }
+      ]
+    },
+    {
+      "key": "src/pages/Letters.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Letters",
+          "methods": [],
+          "actualName": "Letters"
+        }
+      ]
+    },
+    {
+      "key": "src/pages/WpPage.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "WpPage",
+          "methods": [],
+          "actualName": "WpPage"
+        }
+      ]
+    },
+    {
+      "key": "src/components/header/Header.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Header",
+          "methods": [],
+          "actualName": "Header"
+        }
+      ]
+    },
+    {
+      "key": "src/components/header/Nav.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Nav",
+          "methods": [],
+          "actualName": "Nav"
+        }
+      ]
+    },
+    {
+      "key": "src/components/header/SmartNav.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "MainNavigation",
+          "methods": [],
+          "actualName": "MainNavigation"
+        }
+      ]
+    },
+    {
+      "key": "src/components/omnibox/Omnibox.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Omnibox",
+          "methods": [],
+          "actualName": "Omnibox"
+        }
+      ]
+    },
+    {
+      "key": "src/components/table/Table.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Table",
+          "methods": [],
+          "actualName": "Table"
+        },
+        {
+          "description": "",
+          "displayName": "TableHeader",
+          "methods": [],
+          "actualName": "TableHeader"
+        },
+        {
+          "description": "",
+          "displayName": "ThCell",
+          "methods": [],
+          "actualName": "ThCell"
+        },
+        {
+          "description": "",
+          "displayName": "Letter",
+          "methods": [],
+          "actualName": "Letter"
+        },
+        {
+          "description": "",
+          "displayName": "Person",
+          "methods": [],
+          "actualName": "Person",
+          "props": {
+            "person": {
+              "defaultValue": {
+                "value": "{}",
+                "computed": false
+              },
+              "required": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

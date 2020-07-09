@@ -1,14 +1,16 @@
 import React from 'react'
-import css from './Header.module.scss'
-import { Nav } from './Nav'
+import styles from './Header.module.scss'
+import { GridContainer } from './../Container/Container'
 
 
-export function Header() {
+export function Header({children}) {
 
     return (
-        <div className={css.header + ' test'}>
-            <div className={css.title}>Industriegeschichte Privat</div>
-            <Nav />
-        </div>
+        <GridContainer>
+            <div className={styles.header + ' test'}>
+                <a href='/' className={styles.title}>Industriegeschichte Privat</a>
+                {children}
+            </div>
+        </GridContainer>
     )
 }

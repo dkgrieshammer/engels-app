@@ -1,0 +1,8 @@
+@use './../../theme.scss';
+
+.wrapper {
+  display: grid;
+  // margin: 0 20px;
+  max-width: 1110px;
+  margin: 0 auto;
+}

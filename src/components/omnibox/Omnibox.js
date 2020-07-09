@@ -9,6 +9,7 @@ export function Omnibox() {
       <header>
         <CloseButton />
       </header>
+      
     </Card>
   )
 

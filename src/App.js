@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { DataContext } from "./modules/Contexts"
-import MainNavigation from './components/nav/Header'
+import MainNavigation from './components/header/Header'
 import Home from './modules/Home'
 import Letters from './pages/Letters'
 import WpPage from './pages/WpPage'

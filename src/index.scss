@@ -1,0 +1,13 @@
+@import './theme.scss';
+/** 
+Main Styles for page using theme variables
+Components shall have their own style files
+*/
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  color: $text-color;
+}

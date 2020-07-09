@@ -1,0 +1,22 @@
+@import "./../../theme.scss";
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.link {
+  padding: 0 0.5rem 0.3rem .5rem;
+  margin: 1rem 1rem;
+  font-weight: bold;
+  color: $link-color;
+  display: block;
+  text-decoration: none;
+  &.active {
+    border-bottom: 2px solid $link-light;
+  }
+  &:hover {
+    border-bottom: 2px solid $link-color;
+  }
+}
