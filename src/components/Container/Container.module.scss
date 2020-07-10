@@ -1,5 +1,9 @@
 @use './../../theme.scss';
 
+.grid-container {
+  display: grid;
+}
+
 .wrapper {
   display: grid;
   // margin: 0 20px;

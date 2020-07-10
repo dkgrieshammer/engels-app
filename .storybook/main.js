@@ -17,6 +17,10 @@ module.exports = {
     // Return the altered config
     return config;
   },
+  // config.resolve.modules = [
+
+  // ],
+
   stories: ['../src/**/*.stories.(js|mdx)'],
   addons: [
     '@storybook/preset-create-react-app',
