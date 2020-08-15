@@ -1,0 +1,88 @@
+@import 'theme.scss';
+
+$border-bottom: 1px solid #C4C4C4;
+
+.table {
+    width: 100%;
+    position: relative;
+    border-collapse: collapse;
+
+    thead {
+        text-align: left;
+        background-color: white;
+        th {
+            height: 5.6rem;
+            line-height: 5.6rem;
+            color: $text-gray;
+            font-weight: 500;
+            // position: sticky;
+            top:0;
+            background-color: white;
+            box-shadow: 0 1px 0 #C4C4C4;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            // display: flex;
+            // justify-content: flex-start;
+            svg {
+                display: block;
+                margin-left: .5rem;
+            }
+            .head {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            &.sortable {
+                &:hover {
+                    background-color: $hover;
+                    :global svg {
+                        visibility: visible;
+                    }
+                }
+                &:active {
+                    background-color: $active;
+                }
+                :global svg {
+                    visibility: hidden;
+                }
+                &.active {
+                    :global svg {
+                        visibility: visible;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    tbody {
+
+        tr {
+            &:hover {
+                background-color: $hover;
+            }
+            &:active {
+                background-color: $active;
+            }
+        }
+    }
+
+    tr {
+        height: 6rem;
+    }
+    
+    td {
+        font-weight: 500;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        border-bottom: $border-bottom;
+    }
+    .date {
+        white-space: nowrap;
+    }
+    .small {
+        color: $text-gray;
+        font-size: 1.3rem;
+    }
+}

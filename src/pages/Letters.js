@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "./../modules/Contexts";
-import Table, { ThCell } from './../components/table/Table'
-import Toolbox from "../components/toolbox/toolbox";
+import Table, { TableHeadCell } from 'Components/Table/Table'
+import Toolbox from "Components/Filter/Filter";
 
 export default function Letters(props) {
     const data = useContext(DataContext)
@@ -86,12 +86,12 @@ export default function Letters(props) {
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <ThCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'nr'} callback={() => onSelect('nr')}>Nr</ThCell>
-                                <ThCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'sender'} callback={() => onSelect('sender')}>Von</ThCell>
-                                <ThCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'receiver'} callback={() => onSelect('receiver')}>An</ThCell>
-                                <ThCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'date'} callback={() => onSelect('date')}>Datum</ThCell>
-                                <ThCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'from'} callback={() => onSelect('from')}>Abgesendet</ThCell>
-                                <ThCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'to'} callback={() => onSelect('to')}>Empfangen</ThCell>
+                                <TableHeadCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'nr'} callback={() => onSelect('nr')}>Nr</TableHeadCell>
+                                <TableHeadCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'sender'} callback={() => onSelect('sender')}>Von</TableHeadCell>
+                                <TableHeadCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'receiver'} callback={() => onSelect('receiver')}>An</TableHeadCell>
+                                <TableHeadCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'date'} callback={() => onSelect('date')}>Datum</TableHeadCell>
+                                <TableHeadCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'from'} callback={() => onSelect('from')}>Abgesendet</TableHeadCell>
+                                <TableHeadCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'to'} callback={() => onSelect('to')}>Empfangen</TableHeadCell>
                             </tr>
                         </thead>
                         <tbody>

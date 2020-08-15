@@ -1,0 +1,32 @@
+@import 'theme.scss';
+
+.button {
+	line-height: 3rem;
+	border-radius: $radius;
+	border: solid 1px $border-color;
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: $btn-bg;
+	outline: none;
+	text-transform: uppercase;
+	color: $text-gray;
+	display: flex;
+	justify-content: flex-start;
+  align-items: center;
+  
+	&:hover {
+		background-color: $hover;
+	}
+	&:active {
+		background-color: $active;
+	}
+	svg {
+		display: inline-block;
+		width: 2.4rem;
+    height: 2.4rem;
+    margin-top: -2px;
+    margin-left: .5rem;
+    align-self: center;
+	}
+}

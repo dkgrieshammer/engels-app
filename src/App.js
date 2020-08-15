@@ -1,18 +1,26 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { DataContext } from "./modules/Contexts"
-import MainNavigation from './components/header/Header'
+import {Header} from 'Components/header/Header'
 import Home from './modules/Home'
 import Letters from './pages/Letters'
 import WpPage from './pages/WpPage'
 import Correspondences from './pages/Correspondences';
-import Footer from './modules/Footer';
+import Footer from 'Components/Footer/Footer';
+
+const wpUrl = 'https://chost20.zim.uni-wuppertal.de/wordpress/wp-json/wp/v2/pages/'
+const siteUrl = 'https://chost20.zim.uni-wuppertal.de'
+// chost20.zim.uni-wuppertal.de
+const apiUrl = 'https://chost20.zim.uni-wuppertal.de/api'
+
+// const localWpUrl = 'http://wordpress.engels-archiv.de/wp-json/wp/v2/pages/'
+// const localSiteUrl = 'http://wordpress.engels-archiv.de'
 
 class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.siteUrl = 'http://wordpress.engels-archiv.de'
+    this.siteUrl = siteUrl
     this.counter = 0
     this.state = {
       title: {},
@@ -36,9 +44,9 @@ class App extends React.Component {
 
   getData() {
     console.log("Called by " + this.counter)
-    const getPersons = fetch('http://api.engels-archiv.de/api/v1/persons').then((response) => response.json())
-    const getPlaces = fetch('http://api.engels-archiv.de/api/v1/places').then((response) => response.json())
-    const getLetters = fetch('https://chost20.zim.uni-wuppertal.de/api/v1/letters').then((response) => response.json())
+    const getPersons = fetch(apiUrl + '/api/v1/persons').then((response) => response.json())
+    const getPlaces = fetch(apiUrl + '/api/v1/places').then((response) => response.json())
+    const getLetters = fetch(apiUrl + '/api/v1/letters').then((response) => response.json())
     Promise.all([getPersons, getPlaces, getLetters])
     .then((responses) => {
       console.log(responses)
@@ -98,11 +106,12 @@ class App extends React.Component {
 
   getWpPages() {
     console.log("Called by " + this.counter)
-    return fetch('http://wordpress.engels-archiv.de/wp-json/wp/v2/pages/')
+    return fetch(wpUrl)
     .then((response) => response.json())
     .then((responseJson) => {
       // Update state here
       const pages = responseJson
+      console.log(pages)
       this.setState({ pages: pages })
         this.counter ++
         console.log("Called by " + this.counter)
@@ -122,7 +131,7 @@ class App extends React.Component {
       <Router>
         <DataContext.Provider value={this.state}>
           <div className="App">
-            <MainNavigation pages={this.state.pages} siteUrl={this.siteUrl} callback={this.getLinkFromUrl} />
+            <Header pages={this.state.pages} siteUrl={this.siteUrl} callback={this.getLinkFromUrl} />
             <Switch>
               <Route path="/home">
                 <Home />

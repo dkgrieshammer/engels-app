@@ -1,0 +1,26 @@
+@import 'theme.scss';
+
+.head {
+  height: 4rem;
+  border-top: 1px solid $gray1;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .title {
+    line-height: 4rem;
+  }
+  .icon {
+    width: 3rem;
+  }
+  svg {
+    display: block;
+  }
+  
+  &:hover{
+    background-color: $hover;
+  }
+  &:active{
+    background-color: $active;
+  }
+}

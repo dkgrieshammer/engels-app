@@ -1,5 +1,0 @@
-ExpansionHeader example:
-
-```js
-<ExpansionHeader />
-```

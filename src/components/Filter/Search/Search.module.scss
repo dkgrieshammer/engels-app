@@ -1,0 +1,40 @@
+@import 'theme.scss';
+
+.searchInput {
+  display: inline-flex;
+  width: 100%;
+	.searchBtn {
+		width: 4rem;
+		line-height: 4rem;
+		background-color: $hover;
+		display: flex;
+		justify-content: center;
+		box-sizing: border-box;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+    border: none;
+    &:hover {
+      background-color: $active;
+    }
+    &:active {
+      outline: none;
+      border: none;
+      background-color: $active - 20;
+    }
+		svg {
+			display: block;
+			align-self: center;
+		}
+	}
+	input {
+		line-height: 4rem;
+		border: 1px solid #bdbdbd;
+		box-sizing: border-box;
+		border-radius: 0 3px 3px 0;
+    padding-left: 5px;
+    width: 100%;
+    &:focus {
+      outline: 1px solid $link-light;
+    }
+	}
+}

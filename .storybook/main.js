@@ -25,6 +25,13 @@ module.exports = {
   addons: [
     '@storybook/preset-create-react-app',
     '@storybook/addon-actions',
+    // '@storybook/addon-controls',
+    // '@storybook/addon-knobs/register',
+    '@storybook/addon-a11y/register',
+    {
+      name:'@storybook/addon-docs',
+      options: { configureJSX: true }
+    },
     '@storybook/addon-links',
   ],
 };

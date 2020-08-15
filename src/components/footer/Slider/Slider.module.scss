@@ -1,0 +1,61 @@
+// @import 'theme.scss';
+
+// $w: 80%;
+// $h: 1em;
+
+// @mixin track() {
+//   background: none; /* get rid of Firefox track background */
+//   height: 100%;
+//   width: 100%;
+// }
+// @mixin thumb() {
+//   background: white;
+//   border: none; /* get rid of Firefox thumb border */
+//   border-radius: 50%; /* get rid of Firefox corner rounding */
+//   pointer-events: auto; /* catch clicks */
+//   width: $h; height: $h;
+// }
+
+// .container {
+// 	width: 100%;
+// 	height: 11.4rem;
+// 	background-color: $near-black;
+// 	border-top: 1px solid #828282;
+// 	position: relative;
+// }
+// .slider {
+//   display: grid;
+//   grid-template-rows: max-content $h;
+//   margin: 1em auto;
+//   width: $w;
+//   background: transparent;
+//   outline:none;
+//   // height: 5px;
+
+//   label {
+//     position: absolute;
+//     clip-path: inset(50%);
+//   }
+// }
+
+// input[type=range] {
+//   background: none; /* get rid of white Chrome background */
+//   color: #000;
+//   font: inherit; /* fix too small font-size in both Chrome & Firefox */
+//   margin: 0;
+//   pointer-events: none; /* let clicks pass through */
+//   outline: none;
+//   appearance: none;
+//   // &::-webkit-slider-runnable-track { @include track }
+// 	// &::-moz-range-track { @include track }
+	
+// 	// &::-webkit-slider-thumb { @include thumb }
+// 	// &::-moz-range-thumb { @include thumb }
+
+//   grid-column:1;
+//   grid-row: 2;
+// }
+
+// .indicator {
+
+// }

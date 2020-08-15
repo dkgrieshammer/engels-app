@@ -1,0 +1,101 @@
+.container {
+	display: flex;
+	width: 300px;
+	height: 200px;
+	background-color: red;
+}
+
+// .header {
+// 	height: 3.6rem;
+// 	padding: 2px;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	position: relative;
+// 	.title {
+// 		text-transform: uppercase;
+// 		line-height: 3rem;
+// 	}
+// }
+
+// .searchInput {
+// 	display: inline-flex;
+// 	.searchIcon {
+// 		width: 4rem;
+// 		line-height: 4rem;
+// 		background-color: #bdbdbd;
+// 		display: flex;
+// 		justify-content: center;
+// 		box-sizing: border-box;
+// 		border-radius: 3px 0 0 3px;
+// 		svg {
+// 			display: block;
+// 			align-self: center;
+// 		}
+// 	}
+// 	input {
+// 		line-height: 4rem;
+// 		border: 1px solid #bdbdbd;
+// 		box-sizing: border-box;
+// 		border-radius: 0 3px 3px 0;
+// 		padding-left: 5px;
+// 	}
+// }
+ 
+
+
+.toolbox-position-container {
+	position: absolute;
+	right: 50%;
+	top: 95px;
+}
+
+.toolbox-button {
+}
+
+.toolbox {
+	position: relative;
+	width: 18rem;
+	height: 500px;
+	background-color: white;
+	box-shadow: 0px 0px 15px rgba(100, 100, 100, 0.20);
+	padding: 10px;
+}
+
+
+
+// @media (min-width: map_get($grid-breakpoints, "xs")) {
+//   .toolbox-position-container { margin-right: - map_get($container-max-widths, 'sm') / 2 + 15}
+// }
+// @media (min-width: map_get($grid-breakpoints, "sm")) {
+//   .toolbox-position-container { margin-right: - map_get($container-max-widths, 'sm') / 2 + 15}
+// }
+// @media (min-width: map_get($grid-breakpoints, "md")) {
+//   .toolbox-position-container { margin-right: - map_get($container-max-widths, 'md') / 2 + 15}
+// }
+// @media (min-width: map_get($grid-breakpoints, "lg")) {
+//   .toolbox-position-container { margin-right: - map_get($container-max-widths, 'lg') / 2 + 15}
+// }
+// @media (min-width: map_get($grid-breakpoints, "xl")) {
+//   .toolbox-position-container { margin-right: - map_get($container-max-widths, 'xl') / 2 + 15}
+// }
+/* 
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+*/

@@ -1,0 +1,11 @@
+.head {
+	height: 3.6rem;
+	padding: 2px;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	.title {
+		text-transform: uppercase;
+		line-height: 3rem;
+	}
+}

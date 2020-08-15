@@ -2,13 +2,22 @@ import React from 'react';
 import css from './Nav.module.scss'
 
 
-export const NavItem = (props) => <a href={props.href} className={props.active ? css.link + " " + css.active : css.link}>{props.children}</a>
+export const NavItem = (props) => <li><a href={props.href} className={props.active ? css.link + " " + css.active : css.link}>{props.children}</a></li>
 
-export function Nav({children}) {
+export function Nav({ children }) {
 
-  return(
-    <div className={css.nav}>
+  return (
+    <ul className={css.nav}>
       {children}
-    </div>
+    </ul>
   )
 }
+
+export const DropDown = ({ title, children }) => (
+  <li className={css.dropdown}>
+    <div className={css.link}>{title}</div>
+    <ul>
+      {children}
+    </ul>
+  </li>
+)

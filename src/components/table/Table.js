@@ -1,44 +1,32 @@
 import React from 'react'
-import './Table.scss'
-import {ArrowDown, ArrowUp} from './../../Icons'
-import PropTypes from 'prop-types'
+import css from './Table.module.scss'
+import { ArrowDown, ArrowUp } from 'Components/Icons/Icons'
 
-export default function Table(props) {
-    
+
+
+export const Table = ({ children }) => <table className={css.table}>{children}</table>
+
+export const TableHead = ({ children }) => (
+    <thead>
+        <tr>
+            {children}
+        </tr>
+    </thead>
+)
+export const TableBody = ({ children }) => <tbody>{children}</tbody>
+export const TableRow = ({ children }) => <tr>{children}</tr>
+export const RowNr = ({ children }) => <td className={css.rowNr}>{children}</td>
+
+
+export function TableHeadCell({ active = false, callback, dir, children }) {
+
+    const style = active ? css.sortable + ' ' + css.active : css.sortable
     return (
-        <table className="table table-striped">
-            <TableHeader />
-            <tbody>
-                {props.children}
-            </tbody>
-        </table>
-    )
-}
-
-export function TableHeader() {
-    return (
-        <thead>
-            <tr>
-                <ThCell>Nr</ThCell>
-                <ThCell active={true}>Von</ThCell>
-                <ThCell>An</ThCell>
-                <ThCell>Datum</ThCell>
-                <ThCell>Abgesendet</ThCell>
-                <ThCell>Empfangen</ThCell>
-            </tr>
-        </thead>
-    )
-}
-
-export function ThCell({active, callback, dir, children}) {
-
-    const style = active ? "lt-sortable-table-header active" : "lt-sortable-table-header"
-    return (
-    <th 
-        onClick={callback}
-        className={style}>
-        {children} {dir === 'up' ? <ArrowUp/> : <ArrowDown/> }
-    </th>
+        <th
+            onClick={callback}
+            className={style}>
+            <div className={css.head}>{children} {dir === 'up' ? <ArrowUp /> : <ArrowDown />}</div>
+        </th>
     )
 }
 
@@ -46,24 +34,24 @@ export function Letter(props) {
     return (
         <tr>
             <td>{props.nr || 1}</td>
-            <Person person={props.sender} />
-            <Person person={props.receiver} />
+            <Person person={props.sender || "Sender"} />
+            <Person person={props.receiver || "Receiver"} />
             <DateFormatted date={props.date} />
-            <Place name={props.from} />
-            <Place name={props.to} />
+            <Place name={props.from || "sent from"} />
+            <Place name={props.to || "sent to"} />
         </tr>
     )
 }
 
 function Place({ name }) {
     return (
-        <td>
+        <td className={css.small}>
             {name || "Place"}
         </td>
     )
 }
 
-export function Person({person = {}}) {
+export function Person({ person = {} }) {
 
     return (
         <td>
@@ -82,7 +70,7 @@ function DateFormatted(props) {
     const zeroMonth = month < 10 ? `0${month}` : month
     const zeroDay = day < 10 ? `0${day}` : day
     return (
-        <td className="date">
+        <td className={css.date + ' ' + css.small}>
             {`${zeroDay}. ${zeroMonth}. ${year}`}
         </td>
     )

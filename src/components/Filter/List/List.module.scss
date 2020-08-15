@@ -1,0 +1,86 @@
+@import 'theme.scss';
+
+.listgroup {
+  width: 100%;
+  padding: 0;
+	li {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 100%;
+		list-style: none;
+		line-height: 1.9rem;
+		margin-bottom: .3rem;
+		position: relative;
+		input[type="checkbox"] {
+			margin-right: 10px;
+			opacity: 0;
+			width: 0;
+			height: 0;
+			position: absolute;
+			cursor: pointer;
+		}
+		label {
+			padding: 3px 1rem 3px 2.8rem;
+			border-radius: 3px;
+      cursor: pointer;
+      &:hover {
+        background-color: $hover;
+      }
+			&:before {
+				margin-left: -2.5rem;
+				content: "";
+				width: 18px;
+				height: 18px;
+				margin-right: 10px;
+				display: inline-block;
+				position: absolute;
+				border: 2px solid #4f4f4f;
+				border-radius: 2px;
+				box-sizing: border-box;
+			}
+			&:after {
+				position: absolute;
+				left: 7px;
+				top: 7px;
+				content: none;
+				display: inline-block;
+				height: 5px;
+				width: 8px;
+				border-left: 2px solid #4f4f4f;
+				border-bottom: 2px solid #4f4f4f;
+				transform: rotate(-45deg);
+			}
+    }
+
+		&.type {
+			label {
+        color: white;
+        &:hover {
+          filter:brightness(85%);
+        }
+      }
+    }
+    
+		.num {
+			display: block;
+			margin-left: auto;
+			padding-left: 10px;
+		}
+
+		button {
+			border: none;
+			outline: none;
+			background-color: white;
+			margin: 0;
+      padding: 3px;
+      border-radius: 3px;
+      &:hover {
+        background-color: $hover;
+      }
+		}
+    input[type="checkbox"]:checked + label:after {
+      content: "";
+    }
+  }
+}
