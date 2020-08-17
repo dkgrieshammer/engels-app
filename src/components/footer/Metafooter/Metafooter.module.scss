@@ -1,0 +1,10 @@
+@import 'theme.scss';
+
+.container {
+	width: 100%;
+	height: 11.4rem;
+	background-color: $near-black;
+	border-top: 1px solid #828282;
+	position: fixed;
+	bottom: $footer-base-height;
+}

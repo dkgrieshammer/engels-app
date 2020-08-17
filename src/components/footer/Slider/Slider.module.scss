@@ -1,61 +1,95 @@
-// @import 'theme.scss';
+@import 'theme.scss';
 
-// $w: 80%;
-// $h: 1em;
+$w: 80%;
+$h: 1em;
+$handleSize: 1.7rem;
+$color : white;
 
-// @mixin track() {
-//   background: none; /* get rid of Firefox track background */
-//   height: 100%;
-//   width: 100%;
-// }
-// @mixin thumb() {
-//   background: white;
-//   border: none; /* get rid of Firefox thumb border */
-//   border-radius: 50%; /* get rid of Firefox corner rounding */
-//   pointer-events: auto; /* catch clicks */
-//   width: $h; height: $h;
-// }
+@mixin thumb() {
+  background: $color;
+  border: none; /* get rid of Firefox thumb border */
+  border-radius: 50%; /* get rid of Firefox corner rounding */
+  pointer-events: all; /* catch clicks */
+  width: $handleSize; height: $handleSize;
 
-// .container {
-// 	width: 100%;
-// 	height: 11.4rem;
-// 	background-color: $near-black;
-// 	border-top: 1px solid #828282;
-// 	position: relative;
-// }
-// .slider {
-//   display: grid;
-//   grid-template-rows: max-content $h;
-//   margin: 1em auto;
-//   width: $w;
-//   background: transparent;
-//   outline:none;
-//   // height: 5px;
+  &:hover {
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.6);
+    border: 2px solid black;
+  }
+}
 
-//   label {
-//     position: absolute;
-//     clip-path: inset(50%);
-//   }
-// }
+.container {
+  position: absolute;
+  display: grid;
+  grid-template-rows: max-content $h;
+  margin: 3em auto 1em auto;
+  left: 10px;
+  right: 20px;
+  background: transparent;
+  outline:none;
 
-// input[type=range] {
-//   background: none; /* get rid of white Chrome background */
-//   color: #000;
-//   font: inherit; /* fix too small font-size in both Chrome & Firefox */
-//   margin: 0;
-//   pointer-events: none; /* let clicks pass through */
-//   outline: none;
-//   appearance: none;
-//   // &::-webkit-slider-runnable-track { @include track }
-// 	// &::-moz-range-track { @include track }
-	
-// 	// &::-webkit-slider-thumb { @include thumb }
-// 	// &::-moz-range-thumb { @include thumb }
+  label {
+    position: absolute;
+    clip-path: inset(50%);
+  }
 
-//   grid-column:1;
-//   grid-row: 2;
-// }
+  .indicatorContainer {
+    //thats it! nice;
+    position: absolute;
+    height: 10px;
+    left: $handleSize / 2;
+    right: $handleSize / 2;
+    // width:100%;
+    bottom: $handleSize + 1;
+  }
+  .indicator {
+    text-align: center;
+    position: absolute;
+    color: $color;
+    // background-color: white;
+    transform: translateX(-50%);
+    bottom: 0;
+    padding: 3px;
+    opacity: 0;
+    width: 40px;
+    // height: 10px;
+  }
+  &:hover .indicator {
+    opacity: 100;
+  }
+}
 
-// .indicator {
+input[type=range] {
+  grid-column:1;
+  grid-row: 2;
+  width: 100%;
+  // height: 0; //why do we need that?
+  background: transparent;
+  -webkit-appearance: none; //runnable track is already gone with this?
+  -moz-appearance: none;
+  outline: none; //remove outline
+  pointer-events: none;
+  z-index: 1;
+  // THUMB BUBBLES
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include thumb;
+  }
+  &::-moz-range-thumb {
+    -moz-appearance: none;
+    @include thumb
+  }
+}
 
-// }
+.sliderBg{
+  background-color: $color;
+  position: absolute;
+  z-index: 0;
+  left: $handleSize / 2;
+  right: $handleSize / 2;
+  height: 2px;
+  left: 0;
+  top: 50%;
+  margin-top: -1px;
+  pointer-events: none;
+}

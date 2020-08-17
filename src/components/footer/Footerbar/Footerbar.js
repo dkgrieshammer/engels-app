@@ -1,7 +1,7 @@
-import css from './Footer.module.scss'
+import css from './Footerbar.module.scss'
 import React from 'react';
 
-export default function Footer() {
+export default function Footerbar({children}) {
     return (
         <footer className={css.footer}>
             <div className={css.center}>
@@ -10,4 +10,3 @@ export default function Footer() {
         </footer>
     )
 }
-

@@ -6,7 +6,7 @@ import Home from './modules/Home'
 import Letters from './pages/Letters'
 import WpPage from './pages/WpPage'
 import Correspondences from './pages/Correspondences';
-import Footer from 'Components/Footer/Footer';
+import Footer from 'Components/Footer/Footerbar/Footerbar';
 
 const wpUrl = 'https://chost20.zim.uni-wuppertal.de/wordpress/wp-json/wp/v2/pages/'
 const siteUrl = 'https://chost20.zim.uni-wuppertal.de'
