@@ -1,0 +1,29 @@
+.container {
+	overflow: hidden;
+	padding-top: 56.25%; /* 16:9*/
+	position: relative;
+
+	iframe {
+		border: 0;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.test {
+  padding: 10px;
+  background-color: #332200;
+  position: fixed;
+  top: 40px;
+  left: 50px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 #121212;
+  &:hover {
+    background-color: #332200;
+    box-shadow: 0 0 1px 0 #121212;
+  }
+}
