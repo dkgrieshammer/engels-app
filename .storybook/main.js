@@ -17,21 +17,14 @@ module.exports = {
     // Return the altered config
     return config;
   },
-  // config.resolve.modules = [
-
-  // ],
-
   stories: ['../src/**/*.stories.(js|mdx)'],
   addons: [
     '@storybook/preset-create-react-app',
-    '@storybook/addon-actions',
-    // '@storybook/addon-controls',
-    // '@storybook/addon-knobs/register',
-    '@storybook/addon-a11y/register',
     {
-      name:'@storybook/addon-docs',
+      name: '@storybook/addon-essentials',
       options: { configureJSX: true }
     },
+    '@storybook/addon-a11y/register',
     '@storybook/addon-links',
   ],
 };
