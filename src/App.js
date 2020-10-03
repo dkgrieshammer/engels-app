@@ -7,9 +7,11 @@ import Letters from './pages/Letters'
 import WpPage from './pages/WpPage'
 import Correspondences from './pages/Correspondences';
 import Footer from 'Components/Footer/Footerbar/Footerbar';
+import { SmartHeader } from 'Components/header/SmartHeader';
+import MainNavigation from 'Components/header/SmartNav';
 
 const wpUrl = 'https://chost20.zim.uni-wuppertal.de/wordpress/wp-json/wp/v2/pages/'
-const siteUrl = 'https://chost20.zim.uni-wuppertal.de'
+const siteUrl = 'https://chost20.zim.uni-wuppertal.de/wordpress'
 // chost20.zim.uni-wuppertal.de
 const apiUrl = 'https://chost20.zim.uni-wuppertal.de/api'
 
@@ -49,7 +51,7 @@ class App extends React.Component {
     const getLetters = fetch(apiUrl + '/api/v1/letters').then((response) => response.json())
     Promise.all([getPersons, getPlaces, getLetters])
     .then((responses) => {
-      console.log(responses)
+      console.log("api response", responses)
       const persons = responses[0]
       const places = responses[1]
       const letters = responses[2]
@@ -111,12 +113,13 @@ class App extends React.Component {
     .then((responseJson) => {
       // Update state here
       const pages = responseJson
-      console.log(pages)
+      console.log("wp pages", pages)
       this.setState({ pages: pages })
         this.counter ++
         console.log("Called by " + this.counter)
       })
       .catch((error) => {
+        console.log("WP Pages Error:")
         console.error(error);
       });
   }
@@ -131,7 +134,9 @@ class App extends React.Component {
       <Router>
         <DataContext.Provider value={this.state}>
           <div className="App">
-            <Header pages={this.state.pages} siteUrl={this.siteUrl} callback={this.getLinkFromUrl} />
+            {/* <Header pages={this.state.pages} siteUrl={this.siteUrl} callback={this.getLinkFromUrl} /> */}
+            {/* <SmartHeader callback={this.getLinkFromUrl} /> */}
+            <Header><MainNavigation callback={this.getLinkFromUrl}/></Header>
             <Switch>
               <Route path="/home">
                 <Home />

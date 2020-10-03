@@ -18,6 +18,7 @@ export const PDF = ({file}) => {
         file={file}
         onLoadSuccess={onDocumentLoad}
         >
+          
         <Page
           pageNumber={1}
           scale={scale}
