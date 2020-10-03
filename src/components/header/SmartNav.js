@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from "react-router-dom";
 import { Navbar } from './../../styles';
-import { Nav, NavItem } from './Nav';
+import { DropDown, Nav, NavItem } from './Nav';
 
 class MainNavigation extends React.Component {
 
@@ -38,11 +38,17 @@ class MainNavigation extends React.Component {
                 {this.state.pages.map(pageLink => {
                     const pageTitle = pageLink.title
                     const pageUrl = this.props.callback(pageLink.url)
-                    console.log("pageurl splitted is ",pageUrl)
+                    console.log("URL IS ", pageLink.url)
+                    console.log("CALLBACK IS ", pageUrl)
                     const childElements = pageLink.wpse_children ? Object.values(pageLink.wpse_children) : null
                     if (childElements) {
                         return (
-                            null
+                            <DropDown
+                                key={pageLink.ID}
+                                title={pageTitle}
+                            >
+                                {childElements.map(el => (<NavItem key={el.ID} to={this.props.callback(el.url)} >{el.title}</NavItem>))}
+                            </DropDown>
                             // <NavDropdown key={pageLink.ID} alignRight title={pageLink.title} id="context-nav-dropdown">
                             //     {childElements.map(el => (<NavDropdown.Item key={el.ID} as={Link} to={this.props.callback(el.url)}>{el.title}</NavDropdown.Item>))}
                             // </NavDropdown>

@@ -33,15 +33,13 @@ class App extends React.Component {
       places: [],
       persons: []
     }
-    this.getWpPages()
-    // this.getAllLetters()
-    // this.getAllPersons()
-    // this.getAllPlaces()
-    this.getData()
+    
   }
   
   componentDidMount() {
-
+    //should be called here
+    this.getWpPages()
+    this.getData()
   }
 
   getData() {
@@ -113,10 +111,10 @@ class App extends React.Component {
     .then((responseJson) => {
       // Update state here
       const pages = responseJson
-      console.log("wp pages", pages)
+      // console.log("wp pages", pages)
       this.setState({ pages: pages })
         this.counter ++
-        console.log("Called by " + this.counter)
+        // console.log("Called by " + this.counter)
       })
       .catch((error) => {
         console.log("WP Pages Error:")
@@ -124,7 +122,7 @@ class App extends React.Component {
       });
   }
 
-  getLinkFromUrl(url) {
+  getLinkFromUrl = (url) => {
     const link = url.split(this.siteUrl)[1] ? url.split(this.siteUrl)[1].slice(0, -1) : url
     return link
   }

@@ -66,3 +66,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## Engels App Remarks
+
+there are some config variables defined in the .env file that can be adjusted; 
+* development domain (until there is a final domain name for the server this is some cryptic chost20.zim.something)
