@@ -13,18 +13,18 @@ export const Default = () => {
   return (
     <Header>
       <Nav>
-        <NavItem href="" active>Start</NavItem>
-        <NavItem href="">Briefe</NavItem>
-        <NavItem href="">Korrespondenzen</NavItem>
+        <NavItem to="/" active>Start</NavItem>
+        <NavItem to="/">Briefe</NavItem>
+        <NavItem to="/">Korrespondenzen</NavItem>
         <DropDown
           title="Register"
         >
-          <NavItem href="">Register 1</NavItem>
-          <NavItem href="">Register 2</NavItem>
-          <NavItem href="">Register 3</NavItem>
+          <NavItem to="/">Register 1</NavItem>
+          <NavItem to="/">Register 2</NavItem>
+          <NavItem to="/">Register 3</NavItem>
         </DropDown>
-        <NavItem href="">Historischer Kontext</NavItem>
-        <NavItem href="">Edition</NavItem>
+        <NavItem to="/">Historischer Kontext</NavItem>
+        <NavItem to="/">Edition</NavItem>
         <SearchNav />
       </Nav>
     </Header>

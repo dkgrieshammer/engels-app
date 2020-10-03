@@ -7,7 +7,6 @@ import Letters from './pages/Letters'
 import WpPage from './pages/WpPage'
 import Correspondences from './pages/Correspondences';
 import Footer from 'Components/Footer/Footerbar/Footerbar';
-import { SmartHeader } from 'Components/header/SmartHeader';
 import MainNavigation from 'Components/header/SmartNav';
 
 const wpUrl = 'https://chost20.zim.uni-wuppertal.de/wordpress/wp-json/wp/v2/pages/'
