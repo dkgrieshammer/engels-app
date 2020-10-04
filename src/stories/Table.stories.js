@@ -1,5 +1,6 @@
 import React from 'react';
-import { Table, TableHeadCell, TableHead, TableBody, Person, Letter } from 'Components/Table/Table';
+import { Table, TableHeadCell, TableHead, TableBody, Letter } from 'Components/Table/Table';
+import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Table'
@@ -9,12 +10,12 @@ export const Header = () => {
   return (
     <Table>
       <TableHead>
-        <TableHeadCell>Nr</TableHeadCell>
-        <TableHeadCell active>Von</TableHeadCell>
-        <TableHeadCell>An</TableHeadCell>
-        <TableHeadCell>Datum</TableHeadCell>
-        <TableHeadCell>Abgesendet</TableHeadCell>
-        <TableHeadCell>Empfangen</TableHeadCell>
+        <TableHeadCell callback={action('clicked on nr')}>Nr</TableHeadCell>
+        <TableHeadCell active  callback={action('clicked on sender')}>Von</TableHeadCell>
+        <TableHeadCell callback={action('clicked on receiver')}>An</TableHeadCell>
+        <TableHeadCell callback={action('clicked on date')}>Datum</TableHeadCell>
+        <TableHeadCell callback={action('clicked on from')}>Abgesendet</TableHeadCell>
+        <TableHeadCell callback={action('clicked on to')}>Empfangen</TableHeadCell>
       </TableHead>
     </Table>
   )

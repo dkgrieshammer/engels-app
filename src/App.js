@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { DataContext } from "./modules/Contexts"
 import {Header} from 'Components/header/Header'
 import Home from './modules/Home'
-import Letters from './pages/Letters'
+import {Letters} from './pages/Letters'
 import WpPage from './pages/WpPage'
 import Correspondences from './pages/Correspondences';
 import Footer from 'Components/Footer/Footerbar/Footerbar';
 import MainNavigation from 'Components/header/SmartNav';
+import Page from 'pages/Page';
 
 const wpUrl = 'https://chost20.zim.uni-wuppertal.de/wordpress/wp-json/wp/v2/pages/'
 const siteUrl = 'https://chost20.zim.uni-wuppertal.de/wordpress'
@@ -64,44 +65,6 @@ class App extends React.Component {
         console.error(error);
       })
   }
-
-  // getAllPersons() {
-  //   return fetch('http://api.engels-archiv.de/api/v1/persons')
-  //     .then((response) => response.json())
-  //     .then((responseJson) => {
-  //       // Update state here
-  //       const persons = responseJson
-  //       this.setState({ persons: persons.data.person })
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }
-  // getAllPlaces() {
-  //   return fetch('http://api.engels-archiv.de/api/v1/places')
-  //     .then((response) => response.json())
-  //     .then((responseJson) => {
-  //       // Update state here
-  //       const places = responseJson
-  //       this.setState({ places: places.data.place })
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }
-
-  // getAllLetters() {
-  //   return fetch('http://api.engels-archiv.de/api/v1/letters')
-  //     .then((response) => response.json())
-  //     .then((responseJson) => {
-  //       // Update state here
-  //       const letters = responseJson
-  //       this.setState({ letters: letters.data.letter })
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }
 
   getWpPages() {
     console.log("Called by " + this.counter)
