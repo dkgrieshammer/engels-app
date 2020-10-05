@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Search.module.scss'
-import { SearchIcon } from 'Components/Icons/Icons';
+import { SearchIcon } from 'components/Icons/Icons';
 
 export const Searchbar = ({onChange, onEnter, placeholder="...Filter"}) => {
 

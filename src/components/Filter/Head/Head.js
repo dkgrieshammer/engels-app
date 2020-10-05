@@ -1,6 +1,6 @@
 import React from 'react';
-import { IconButton } from 'Components/Buttons/IconBtn';
-import { Close } from 'Components/Icons/Icons';
+import { IconButton } from 'components/Buttons/IconBtn';
+import { Close } from 'components/Icons/Icons';
 import styles from './Head.module.scss'
 
 export const Head = ({children, onClose}) => (

@@ -5,3 +5,11 @@ import {addDecorator} from '@storybook/react'
 import { MemoryRouter, Router } from 'react-router-dom'
 
 addDecorator(story => <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>);
+
+export const parameters = {
+  options: {
+    storySort: {
+      method: 'alphabetical'
+    }
+  }
+}

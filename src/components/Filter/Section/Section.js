@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Section.module.scss'
-import { CaretDown, CaretUp } from 'Components/Icons/Icons';
+import { CaretDown, CaretUp } from 'components/Icons/Icons';
 
 const SectionHead = ({ title, open, onClick }) => {
   const style = open ? " open" : ""

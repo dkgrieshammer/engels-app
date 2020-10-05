@@ -1,11 +1,11 @@
 import React from 'react'
-import {Header} from 'Components/header/Header'
-import { Nav, NavItem, DropDown } from 'Components/header/Nav'
-import { SearchNav } from 'Components/search/SearchNav'
+import {Header} from 'components/Header/Header'
+import { Nav, NavItem, DropDown } from 'components/Header/Nav'
+import { SearchNav } from 'components/Search/SearchNav'
 
 
 export default {
-  title: 'Header',
+  title: 'Elements/Header',
   component: Header
 }
 

@@ -1,4 +1,4 @@
-import { GridContainer } from 'Components/Container/Container';
+import { GridContainer } from 'components/Container/Container';
 import React from 'react';
 
 

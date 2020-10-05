@@ -1,7 +1,7 @@
-import { LetterRow, Table, TableBody, TableHead, TableHeadCell } from 'Components/Table/Table';
+import { LetterRow, Table, TableBody, TableHead, TableHeadCell } from 'components/Table/Table';
 import { DataContext } from 'modules/Contexts';
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Page from './Page';
 
 export function Letters(props) {

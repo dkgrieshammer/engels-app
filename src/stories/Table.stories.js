@@ -1,9 +1,9 @@
 import React from 'react';
-import { Table, TableHeadCell, TableHead, TableBody, Letter } from 'Components/Table/Table';
+import { Table, TableHeadCell, TableHead, TableBody, LetterRow } from 'components/Table/Table';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Table'
+  title: 'Elements/Table'
 }
 
 export const Header = () => {
@@ -32,34 +32,34 @@ export const FullTable = () => (
       <TableHeadCell>Empfangen</TableHeadCell>
     </TableHead>
     <TableBody>
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
-      <Letter />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
+      <LetterRow />
     </TableBody>
   </Table>
 )
 
-export const LetterRow = ({nr,sender,receiver,date,from,to}) => (
+export const Letter = ({nr,sender,receiver,date,from,to}) => (
   <Table>
     <TableBody>
-    <Letter nr={nr} sender={sender} receiver={receiver} date={date} from={from} to={to}/>
+    <LetterRow nr={nr} sender={sender} receiver={receiver} date={date} from={from} to={to}/>
     </TableBody>
   </Table>
 )

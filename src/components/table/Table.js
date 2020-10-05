@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './Table.module.scss'
-import { ArrowDown, ArrowUp } from 'Components/Icons/Icons'
+import { ArrowDown, ArrowUp } from 'components/Icons/Icons'
 
 
 

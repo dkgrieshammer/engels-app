@@ -3,7 +3,7 @@ import { linkTo } from '@storybook/addon-links';
 import { Welcome } from '@storybook/react/demo';
 
 export default {
-  title: 'Welcome',
+  title: '_Intro/Welcome',
   component: Welcome,
 };
 

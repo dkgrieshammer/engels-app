@@ -1,5 +1,4 @@
 import React from 'react';
-import Toolbox from 'Components/Filter/Filter';
 import { action } from '@storybook/addon-actions';
 import { Card } from './Card/Card';
 import { Head } from './Head/Head';
@@ -8,7 +7,7 @@ import { Searchbar } from './Search/Search';
 import { List, ListElement, CheckboxElement, ColorCheckElement } from './List/List'
 
 export default {
-  title: 'Filter'
+  title: 'Elements/Filter'
 }
 
 

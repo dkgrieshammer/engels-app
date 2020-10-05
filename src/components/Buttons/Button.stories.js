@@ -1,11 +1,11 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { IconButton } from 'Components/Buttons/IconBtn';
-import { Button } from 'Components/Buttons/Button';
-import { Filter } from 'Components/Icons/Icons';
+import { IconButton } from 'components/Buttons/IconBtn';
+import { Button } from 'components/Buttons/Button';
+import { Filter } from 'components/Icons/Icons';
 
 export default {
-  title: 'Button'
+  title: 'Elements/Button'
 };
 
 export const Default = () => <Button onClick={action('open Filter')}>Filter<Filter/></Button>
