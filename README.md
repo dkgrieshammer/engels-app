@@ -12,6 +12,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+### `npm run storybook`
+
+Runs the Storybook instance for dedicated Module development, living styleguide & visual testing. This should also be built and provided publicly imo.
+more info here [https://storybook.js.org/docs/react/get-started/introduction](https://storybook.js.org/docs/react/get-started/introduction)
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
