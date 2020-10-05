@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { DataContext } from "./modules/Contexts"
-import {Header} from 'components/header/Header'
+import {Header} from 'components/Header/Header'
 import Home from './modules/Home'
 import {Letters} from './pages/Letters'
 import WpPage from './pages/WpPage'
 import Correspondences from './pages/Correspondences';
 import Footer from 'components/Footer/Footerbar/Footerbar';
-import MainNavigation from 'components/header/SmartNav';
+import MainNavigation from 'components/Header/SmartNav';
 import Page from 'pages/Page';
 import { Letter } from 'pages/Letter';
 
