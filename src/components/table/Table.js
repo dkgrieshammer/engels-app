@@ -30,9 +30,12 @@ export function TableHeadCell({ active = false, callback, dir, children }) {
     )
 }
 
-export function Letter(props) {
+export function LetterRow(props) {
+
+    const clicked = () => props.callback(props.letterId) || null
+
     return (
-        <tr>
+        <tr onClick={clicked}>
             <td>{props.nr || 1}</td>
             <Person person={props.sender || "Sender"} />
             <Person person={props.receiver || "Receiver"} />

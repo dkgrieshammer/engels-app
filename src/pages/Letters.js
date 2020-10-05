@@ -1,18 +1,16 @@
-import { Letter, Table, TableBody, TableHead, TableHeadCell } from 'Components/Table/Table';
+import { LetterRow, Table, TableBody, TableHead, TableHeadCell } from 'Components/Table/Table';
 import { DataContext } from 'modules/Contexts';
 import React, { useContext, useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import Page from './Page';
 
 export function Letters(props) {
   const data = useContext(DataContext)
+  const history = useHistory() //used for Letter click
   const [by, setSorting] = useState({ asc: true, col: 'nr' })
   const letters = [...data.letters]
   const pLetters = getPersons(letters, data)
   const fullLetters = getPlaces(pLetters, data)
-
-  // useEffect(() => {
-  //   sortBy()
-  // })
 
 
   function onSelect(id) {
@@ -85,6 +83,10 @@ function sortByName(l, col, asc) {
   return l
 }
 
+const onLetterClicked = (id) => {
+  history.push(`/letter/:${id}`)
+}
+
   return (
     <Page
       title="Übersicht aller Briefe"
@@ -99,9 +101,8 @@ function sortByName(l, col, asc) {
           <TableHeadCell dir={by['asc'] ? 'down' : 'up'} active={by.col === 'to'} callback={() => onSelect('to')}>Empfangen</TableHeadCell>
         </TableHead>
         <TableBody>
-          {console.log(props.letters)}
           {fullLetters.map((letter, i) => {
-            return <Letter key={i} nr={letter.number} date={letter.date} sender={letter.sender} receiver={letter.receiver} from={letter.from} to={letter.to} content={letter['#text']} />
+            return <LetterRow key={i} callback={onLetterClicked} letterId={letter.name} nr={letter.number} date={letter.date} sender={letter.sender} receiver={letter.receiver} from={letter.from} to={letter.to} content={letter['#text']} />
           })}
         </TableBody>
       </Table>

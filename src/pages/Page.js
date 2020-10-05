@@ -11,7 +11,6 @@ export default function Page(props) {
           <div>
             {props.children}
           </div>
-          {/* <div dangerouslySetInnerHTML={{ __html: props.page.content.rendered }}></div> */}
         </div>
       </div>
     </GridContainer>

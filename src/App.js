@@ -9,6 +9,7 @@ import Correspondences from './pages/Correspondences';
 import Footer from 'Components/Footer/Footerbar/Footerbar';
 import MainNavigation from 'Components/header/SmartNav';
 import Page from 'pages/Page';
+import { Letter } from 'pages/Letter';
 
 const wpUrl = 'https://chost20.zim.uni-wuppertal.de/wordpress/wp-json/wp/v2/pages/'
 const siteUrl = 'https://chost20.zim.uni-wuppertal.de/wordpress'
@@ -106,6 +107,10 @@ class App extends React.Component {
               </Route>
               <Route path="/letters">
                 <Letters letters={this.state.letters} />
+              </Route>
+              <Route path="/letter/:id">
+                <Letter>
+                </Letter>
               </Route>
               {this.state.pages.map((page, i) => {
                 const pageID = page.id
