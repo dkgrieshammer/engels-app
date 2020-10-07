@@ -1,37 +1,36 @@
-import React from 'react';
+import React from 'react'
+import { Imageviewer } from '../../Imageviewer/Imageviewer'
+import css from './Normalview.module.scss'
 
-export const Normalview = ({data}) => {
+export class Normalview extends React.Component {
+  constructor (props) {
+    super(props)
 
-  // console.log(data.data.text.body.div[1].opener.salute)
-  // for(const key in data.data) {
-  //   if(key === '#text') console.log(data.data[key])
-  // }
-  let res = ''
-
-  function loopThrough(ob) {
-
-    for(const key in ob) {
-      if(ob[key] instanceof Object) {
-        loopThrough(ob[key])
-        //return null
-      } else {
-        // console.log(`${key} is `, ob[key])
-        // ob["#text"].map((el) => {
-        //   res += el
-        //   console.log(el)
-        // })
-        res += `[${key}]: ${ob[key]}`
-      }
+    this.state = {
+      success: this.props.data.succeess,
+      xml: this.props.data.data,
+      html: this.getLetterHtml().querySelector('letter').innerHTML,
     }
-    return res
   }
 
-  // loopThrough(data.data)
-  // console.log((data.data.text.body))
+  getLetterHtml (html) {
+    const el = document.createElement('div')
+    el.innerHTML = this.props.data.html
 
+    return el
+  }
 
-  return (
-    // <div>{data.data.text.body.div[1].opener.salute}</div>
-  <div><pre>{loopThrough(data.data.text.body)}</pre></div>
-  )
+  render () {
+    return (
+      <div className={css.row}>
+        <div className={`${css['col-12']} ${css['col-lg-6']}`}>
+          <Imageviewer image={ "https://chost20.zim.uni-wuppertal.de/api/facsimile/FE_06.1_22051791.pdf" }/>
+        </div>
+        <div className={`${css['col-12']} ${css['col-lg-6']}`} dangerouslySetInnerHTML={ {
+          __html: this.state.html
+        } }>
+        </div>
+      </div>
+    )
+  }
 }
